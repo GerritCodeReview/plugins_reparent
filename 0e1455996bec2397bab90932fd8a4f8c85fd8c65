@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9efc9ac6_e488fa2b",
+        "filename": ".settings/org.eclipse.core.runtime.prefs",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2015-06-25T15:57:31Z",
+      "side": 1,
+      "message": "Why 2008? :-)",
+      "revId": "0e1455996bec2397bab90932fd8a4f8c85fd8c65",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be423edc_dd262bc3",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2015-06-25T15:57:31Z",
+      "side": 1,
+      "message": "2015?",
+      "range": {
+        "startLine": 2,
+        "startChar": 14,
+        "endLine": 2,
+        "endChar": 18
+      },
+      "revId": "0e1455996bec2397bab90932fd8a4f8c85fd8c65",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9efc9ac6_84870618",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/reparent/SetParent.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2015-06-25T15:57:31Z",
+      "side": 1,
+      "message": "optional: the code below will check membership of a project name into these two collections. A Set is a better choice for this purpose.\n\nI marked this comment as optional because we expect a low number of jails/protectorates and a relatively shallow project hierarchy.",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 87
+      },
+      "revId": "0e1455996bec2397bab90932fd8a4f8c85fd8c65",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9efc9ac6_647d2a93",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/reparent/SetParent.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2015-06-25T15:57:31Z",
+      "side": 1,
+      "message": "will this code work properly for the following case:\n\n    J1\n   /   \\\n  J2    J3\n       /  \\\n       OP NP\n\nJ* are jails, OP \u003d old parent, NP \u003d new parent.\n\nThe myJails will still contain the J2 after the for loop and the exception will be thrown. However, this looks like a case which should work?",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 5
+      },
+      "revId": "0e1455996bec2397bab90932fd8a4f8c85fd8c65",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9efc9ac6_c48dfe39",
+        "filename": "src/main/resources/Documentation/about.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2015-06-25T15:57:31Z",
+      "side": 1,
+      "message": "nit: useless space :-)",
+      "revId": "0e1455996bec2397bab90932fd8a4f8c85fd8c65",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
