@@ -45,6 +45,30 @@
       "revId": "8105e49fd78dd7a7ece0463540aa54f32d01386d",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be423edc_9d074321",
+        "filename": "src/main/resources/static/reparent-project.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-06-25T12:42:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9efc9ac6_64940a4d",
+      "range": {
+        "startLine": 20,
+        "startChar": 28,
+        "endLine": 20,
+        "endChar": 29
+      },
+      "revId": "8105e49fd78dd7a7ece0463540aa54f32d01386d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
