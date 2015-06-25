@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9efc9ac6_44910e5b",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/reparent/SetParent.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-06-25T12:37:57Z",
+      "side": 1,
+      "message": "Nice var names.",
+      "range": {
+        "startLine": 95,
+        "startChar": 17,
+        "endLine": 98,
+        "endChar": 31
+      },
+      "revId": "8105e49fd78dd7a7ece0463540aa54f32d01386d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9efc9ac6_64940a4d",
+        "filename": "src/main/resources/static/reparent-project.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-06-25T12:37:57Z",
+      "side": 1,
+      "message": "Nit: missing blank.",
+      "range": {
+        "startLine": 20,
+        "startChar": 28,
+        "endLine": 20,
+        "endChar": 29
+      },
+      "revId": "8105e49fd78dd7a7ece0463540aa54f32d01386d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
