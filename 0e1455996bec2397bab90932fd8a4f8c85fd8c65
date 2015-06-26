@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "de3d32a0_0ecaeb8e",
+        "filename": ".settings/org.eclipse.core.runtime.prefs",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-06-26T06:16:49Z",
+      "side": 1,
+      "message": "This file was copied by the Maven plugin archetype...\n\nDone",
+      "parentUuid": "9efc9ac6_e488fa2b",
+      "revId": "0e1455996bec2397bab90932fd8a4f8c85fd8c65",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "be423edc_dd262bc3",
         "filename": "pom.xml",
         "patchSetId": 3
@@ -30,6 +48,30 @@
       "writtenOn": "2015-06-25T15:57:31Z",
       "side": 1,
       "message": "2015?",
+      "range": {
+        "startLine": 2,
+        "startChar": 14,
+        "endLine": 2,
+        "endChar": 18
+      },
+      "revId": "0e1455996bec2397bab90932fd8a4f8c85fd8c65",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "de3d32a0_2ec7a787",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-06-26T06:16:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be423edc_dd262bc3",
       "range": {
         "startLine": 2,
         "startChar": 14,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "9ec49ad3_84086662",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/reparent/SetParent.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-06-26T06:16:49Z",
+      "side": 1,
+      "message": "Yes, this is why I made the other 2 collections below Set\u0027s.\n\nDone.",
+      "parentUuid": "9efc9ac6_84870618",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 87
+      },
+      "revId": "0e1455996bec2397bab90932fd8a4f8c85fd8c65",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9efc9ac6_647d2a93",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/reparent/SetParent.java",
         "patchSetId": 3
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "de3d32a0_6ed1af41",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/reparent/SetParent.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-06-26T06:16:49Z",
+      "side": 1,
+      "message": "\u003e will this code work properly for the following case:\n\nYes :-)\n\n \u003e The myJails will still contain the J2 after the for loop \n \u003e and the exception will be thrown.\n\nNo, myJails is only populated with the jails that appear in the old line of parents, and this doesn\u0027t include J2.\n\n \u003e However, this looks like a case which should work?\n\nYes, it should work.",
+      "parentUuid": "9efc9ac6_647d2a93",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 5
+      },
+      "revId": "0e1455996bec2397bab90932fd8a4f8c85fd8c65",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9efc9ac6_c48dfe39",
         "filename": "src/main/resources/Documentation/about.md",
         "patchSetId": 3
@@ -99,6 +189,24 @@
       "writtenOn": "2015-06-25T15:57:31Z",
       "side": 1,
       "message": "nit: useless space :-)",
+      "revId": "0e1455996bec2397bab90932fd8a4f8c85fd8c65",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "de3d32a0_4ed4f332",
+        "filename": "src/main/resources/Documentation/about.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-06-26T06:16:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9efc9ac6_c48dfe39",
       "revId": "0e1455996bec2397bab90932fd8a4f8c85fd8c65",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
