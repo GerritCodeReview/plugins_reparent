@@ -29,8 +29,6 @@ import com.google.gerrit.reviewdb.client.Project;
 import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.account.CapabilityControl;
 import com.google.gerrit.server.config.AllProjectsName;
-import com.google.gerrit.server.config.PluginConfig;
-import com.google.gerrit.server.config.PluginConfigFactory;
 import com.google.gerrit.server.project.ProjectCache;
 import com.google.gerrit.server.project.ProjectResource;
 import com.google.gerrit.server.project.ProjectState;
@@ -40,7 +38,6 @@ import com.google.inject.Provider;
 import com.google.inject.Singleton;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -48,13 +45,10 @@ import java.util.Set;
 public class SetParent implements
     RestModifyView<ProjectResource, com.google.gerrit.server.project.SetParent.Input>,
     UiAction<ProjectResource>{
-  private static final String KEY_JAIL = "jail";
-  private static final String KEY_PROTECTORATE = "protectorate";
-
   private final String pluginName;
   private final Provider<CurrentUser> userProvider;
   private final AllProjectsName allProjectsName;
-  private final PluginConfigFactory cfgFactory;
+  private final Config cfg;
   private final ProjectCache projectCache;
   private final com.google.gerrit.server.project.SetParent setParent;
 
@@ -62,13 +56,13 @@ public class SetParent implements
   SetParent(@PluginName String pluginName,
       Provider<CurrentUser> userProvider,
       AllProjectsName allProjectsName,
-      PluginConfigFactory cfgFactory,
+      Config cfg,
       ProjectCache projectCache,
       com.google.gerrit.server.project.SetParent setParent) {
     this.pluginName = pluginName;
     this.userProvider = userProvider;
     this.allProjectsName = allProjectsName;
-    this.cfgFactory = cfgFactory;
+    this.cfg = cfg;
     this.projectCache = projectCache;
     this.setParent = setParent;
   }
@@ -90,27 +84,23 @@ public class SetParent implements
       return;
     }
 
-    PluginConfig cfg = cfgFactory.getFromGerritConfig(pluginName);
-    Set<String> allJails =
-        new HashSet<>(Arrays.asList(cfg.getStringList(KEY_JAIL)));
-    Set<String> allProtectorates =
-        new HashSet<>(Arrays.asList(cfg.getStringList(KEY_PROTECTORATE)));
+    cfg.reload();
     Set<String> myJails = new HashSet<>();
     Set<String> myProtectorates = new HashSet<>();
 
     for (ProjectState p : rsrc.getControl().getProjectState().parents()) {
       String name = p.getProject().getName();
-      if (allJails.contains(name)) {
+      if (cfg.isJail(p)) {
         myJails.add(name);
       }
-      if (allProtectorates.contains(name)) {
+      if (cfg.isProtectorate(p)) {
         myProtectorates.add(name);
       }
     }
 
     for (ProjectState p : newParent.tree()) {
       String name = p.getProject().getName();
-      if (allProtectorates.contains(name) && !myProtectorates.contains(name)) {
+      if (cfg.isProtectorate(p) && !myProtectorates.contains(name)) {
         throw new ResourceConflictException(
             "not allowed to reparent under project " + name);
       }

@@ -14,6 +14,8 @@
 
 package com.googlesource.gerrit.plugins.reparent;
 
+import static com.googlesource.gerrit.plugins.reparent.Config.KEY_IS_JAIL;
+import static com.googlesource.gerrit.plugins.reparent.Config.KEY_IS_PROTECTORATE;
 import static com.google.gerrit.server.project.ProjectResource.PROJECT_KIND;
 import static com.googlesource.gerrit.plugins.reparent.ReparentOwnProjectCapability.REPARENT_OWN_PROJECT;
 import static com.googlesource.gerrit.plugins.reparent.ReparentProjectCapability.REPARENT_PROJECT;
@@ -21,9 +23,19 @@ import static com.googlesource.gerrit.plugins.reparent.ReparentProjectCapability
 import com.google.gerrit.extensions.annotations.Exports;
 import com.google.gerrit.extensions.config.CapabilityDefinition;
 import com.google.gerrit.extensions.restapi.RestApiModule;
+import com.google.gerrit.server.config.ProjectConfigEntry;
+import com.google.gerrit.server.project.ProjectState;
 import com.google.inject.AbstractModule;
+import com.google.inject.Inject;
 
 class Module extends AbstractModule {
+  private final Config cfg;
+
+  @Inject
+  Module(Config cfg) {
+    this.cfg = cfg;
+  }
+
   @Override
   protected void configure() {
     bind(CapabilityDefinition.class)
@@ -38,5 +50,46 @@ class Module extends AbstractModule {
         put(PROJECT_KIND, "parent").to(SetParent.class);
       }
     });
+
+    bind(ProjectConfigEntry.class)
+        .annotatedWith(Exports.named(KEY_IS_JAIL))
+        .toInstance(new ProjectConfigEntry("Is Jail", false,
+            "Whether child projects can only be reparented within"
+            + " the subtree of this project.") {
+          @Override
+          public boolean isEditable(ProjectState project) {
+            cfg.reload();
+            return !cfg.getGlobalJails().contains(
+                project.getProject().getName());
+          }
+
+          @Override
+          public String onRead(ProjectState project, String value) {
+            if (!isEditable(project)) {
+              return Boolean.TRUE.toString();
+            }
+            return value;
+          }
+        });
+    bind(ProjectConfigEntry.class)
+        .annotatedWith(Exports.named(KEY_IS_PROTECTORATE))
+        .toInstance(new ProjectConfigEntry("Is Protectorate", false,
+            "Whether non-child projects cannot be reparented under"
+            + " the subtree of this project.") {
+          @Override
+          public boolean isEditable(ProjectState project) {
+            cfg.reload();
+            return !cfg.getGlobalProtectorates().contains(
+                project.getProject().getName());
+          }
+
+          @Override
+          public String onRead(ProjectState project, String value) {
+            if (!isEditable(project)) {
+              return Boolean.TRUE.toString();
+            }
+            return value;
+          }
+        });
   }
 }

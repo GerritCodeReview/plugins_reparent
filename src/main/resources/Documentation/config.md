@@ -1,8 +1,11 @@
 Configuration
 =============
 
-The configuration of the @PLUGIN@ plugin is done in the `gerrit.config`
-file.
+Global Configuration
+--------------------
+
+The global configuration of the @PLUGIN@ plugin is done in the
+`gerrit.config` file.
 
 ```
   [plugin "@PLUGIN@"]
@@ -40,3 +43,28 @@ file.
 	The `protectorate` option can be specified multiple times.
 
 	This restriction does not apply to Gerrit administrators.
+
+Project Configuration
+---------------------
+
+The @PLUGIN@ plugin can also have some configuration on project-level
+in the `project.config` file of the project.
+
+```
+  [plugin "@PLUGIN@"]
+    isJail = true
+```
+
+<a id="isJail">
+`plugin.@PLUGIN@.isJail`
+:	Whether child projects can only be reparented within the subtree of
+	this project.
+
+	By default `false`.
+
+<a id="isProtectorate">
+`plugin.@PLUGIN@.isProtectorate`
+:	Whether non-child projects cannot be reparented under the subtree of
+	this project.
+
+	By default `false`.
