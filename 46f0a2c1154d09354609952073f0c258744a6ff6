@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "33e929fb_b1d5a029",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/reparent/Config.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-07-01T09:02:30Z",
+      "side": 1,
+      "message": "Nit: every parameter on its own line.",
+      "range": {
+        "startLine": 43,
+        "startChar": 40,
+        "endLine": 43,
+        "endChar": 70
+      },
+      "revId": "46f0a2c1154d09354609952073f0c258744a6ff6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
